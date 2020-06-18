@@ -1,12 +1,13 @@
 const path = require('path')
 const resolve = dir => path.join(__dirname, dir)
 
-const BASE_URL = process.env.NODE_ENV === 'production' ? '/iview-admin' : '/'
+const PUBLIC_PATH = process.env.NODE_ENV === 'production' ? './' : '/'
 
 module.exports = {
   lintOnSave: false,
   // 定义项目的基本路径
-  baseURI: BASE_URL,
+  // vue-cli3.3版本后baseUrl被废除，需要改写成publicPath
+  publicPath: PUBLIC_PATH,
   chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src'))
