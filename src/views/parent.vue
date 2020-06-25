@@ -8,7 +8,15 @@
 
 <script>
   export default {
-    name: 'parent'
+    name: 'parent',
+    computed:{
+      useId(){
+        console.log(this.$route.query.userId)
+      }
+    },
+    methods:{
+
+    }
   }
 </script>
 
