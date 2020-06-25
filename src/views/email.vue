@@ -1,10 +1,20 @@
 <template>
-    <div>email:1447312816@qq.com</div>
+    <div>
+      <button @click="handleClick">按我</button>
+    </div>
 </template>
 
 <script>
   export default {
-    name: 'email'
+    name: 'email',
+    methods: {
+      handleClick (){
+        this.$bus.$emit('on-click', 'hello')
+      }
+    },
+    mounted () {
+      console.log(this.$bus)
+    }
   }
 </script>
 

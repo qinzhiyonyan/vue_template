@@ -1,10 +1,22 @@
 <template>
-    <div>tel:18007357716</div>
+    <div>
+      {{ message }}
+    </div>
 </template>
 
 <script>
   export default {
-    name: 'tel'
+    name: 'tel',
+    data (){
+      return {
+        message: ''
+      }
+    },
+    mounted () {
+      this.$bus.$on('on-click',mes => {
+        this.message = mes
+      })
+    }
   }
 </script>
 
